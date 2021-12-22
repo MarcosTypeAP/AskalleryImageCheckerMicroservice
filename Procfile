@@ -1,1 +1,1 @@
-web: gunicorn askallery.wsgi --chdir=/app
+web: gunicorn askallery.wsgi --chdir=/app --graceful-timeout 60
