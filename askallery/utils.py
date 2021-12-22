@@ -22,6 +22,7 @@ def is_asuka_picture(image_name):
         'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0',
         'Accept': 'text/html',
     }
+    print(search_by_image_url)
     response = requests.get(search_by_image_url, headers=headers)
     soup = BeautifulSoup(response.text, 'html.parser')
     target = soup.find('input', {'aria-label': 'Search', 'name': 'q'})
