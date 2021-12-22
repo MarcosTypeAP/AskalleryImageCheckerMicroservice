@@ -7,14 +7,15 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def is_asuka_picture(image_url):
+def is_asuka_picture(image_name):
     """Validates that the image is a asuka picture."""
 
     google_search_url = 'https://www.google.com/searchbyimage'
     extra_query_params = '&encoded_image=&image_content=&filename=&hl=en-AR'
+    askallery_media_url = 'https://askallery.herokuapp.com/media/'
 
-    search_by_image_url = '{}?image_url={}{}'.format(
-        google_search_url, image_url, extra_query_params
+    search_by_image_url = '{}?image_url={}{}{}'.format(
+        google_search_url, askallery_media_url, image_name, extra_query_params
     )
 
     headers = {
