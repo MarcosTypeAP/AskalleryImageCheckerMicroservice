@@ -6,6 +6,9 @@ import requests
 # BeautifulSoup
 from bs4 import BeautifulSoup
 
+# Python
+import time
+
 
 def is_asuka_picture(image_name):
     """Validates that the image is a asuka picture."""
@@ -31,6 +34,7 @@ def is_asuka_picture(image_name):
         target = soup.find('input', {'aria-label': 'Search', 'name': 'q'})
         print(str(target))
         result = target.get('value').upper()
+        time.sleep(10)
         if result:
             break
 
