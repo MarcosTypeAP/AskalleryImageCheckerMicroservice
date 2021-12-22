@@ -11,7 +11,7 @@ def is_asuka_picture(image_name):
     """Validates that the image is a asuka picture."""
 
     google_search_url = 'https://www.google.com/searchbyimage'
-    extra_query_params = '&encoded_image=&image_content=&filename=&hl=en-AR'
+    extra_query_params = '&hl=en-AR'
     askallery_media_url = 'https://askallery.herokuapp.com/media/'
 
     search_by_image_url = '{}?image_url={}{}{}'.format(
@@ -24,6 +24,7 @@ def is_asuka_picture(image_name):
     }
     print(search_by_image_url)
     response = requests.get(search_by_image_url, headers=headers)
+    print(response.url)
     soup = BeautifulSoup(response.text, 'html.parser')
     target = soup.find('input', {'aria-label': 'Search', 'name': 'q'})
     print(str(target))
