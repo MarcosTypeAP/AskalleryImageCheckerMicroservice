@@ -1,6 +1,5 @@
 """Askallery wsgi module."""
 
-# Askallery
 from askallery.main import app
 
 

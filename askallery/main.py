@@ -4,7 +4,7 @@
 from flask import Flask, request
 
 # Utils
-from utils import is_asuka_image
+from askallery.utils import is_asuka_image
 
 
 app = Flask(__name__)
