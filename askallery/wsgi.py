@@ -1,7 +1,7 @@
 """Askallery wsgi module."""
 
-from askallery.main import app
+from askallery.main import app as application
 
 
 if __name__ == "__main__":
-    app.run()
+    application.run()

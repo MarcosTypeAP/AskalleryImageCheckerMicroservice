@@ -4,7 +4,7 @@
 from flask import Flask, request
 
 # Utils
-from askallery.utils import is_asuka_image
+from askallery.utils import is_asuka_picture
 
 
 app = Flask(__name__)
@@ -14,6 +14,6 @@ app = Flask(__name__)
 def check_image():
     """Verifies that the given image is about `Asuka Langley`."""
     image = request.args.get('image')
-    if is_asuka_image(image):
+    if is_asuka_picture(image):
         return {'message': 'Is an Asuka image.', 'bool': 1}
     return {'message': 'Is not an Asuka image.', 'bool': 0}

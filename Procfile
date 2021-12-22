@@ -1,1 +1,1 @@
-web: gunicorn askallery.wsgi 
+web: gunicorn askallery.wsgi --chdir=/app
