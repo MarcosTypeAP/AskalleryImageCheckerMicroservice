@@ -23,16 +23,17 @@ def is_asuka_picture(image_name):
         'Accept': 'text/html',
     }
     print(search_by_image_url)
-    response = requests.get(search_by_image_url, headers=headers)
-    print(response.url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    target = soup.find('input', {'aria-label': 'Search', 'name': 'q'})
-    print(str(target))
-    print(type(target))
+    for x in range(4):
+        print(x)
+        response = requests.get(search_by_image_url, headers=headers)
+        print(response.url)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        target = soup.find('input', {'aria-label': 'Search', 'name': 'q'})
+        print(str(target))
+        result = target.get('value').upper()
+        if result:
+            break
 
-    if target is None:
-        return False
-    result = target.get('value').upper()
     print(result)
     wrong_words = ('WWE', 'LUCHADORA', 'WRESTLER')
     if 'ASUKA' not in result or any([x in result for x in wrong_words]):
